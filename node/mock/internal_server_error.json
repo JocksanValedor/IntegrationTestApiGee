@@ -1,0 +1,9 @@
+{
+  "codigo": "500.enrolamiento-transformacion-digital-gestion-usuarios.1003",
+  "mensaje": "Error inesperado en la aplicación.",
+  "folio": "ENRO202101041231560182cddca485",
+  "info": "https://baz-developer.bancoazteca.com.mx/info#500.superapp-enrolamiento-autenticacion-usuarios-v1.1003",
+  "detalles": [
+    "Error inesperado en la aplicación"
+  ]
+}
