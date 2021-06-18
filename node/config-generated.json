@@ -1,0 +1,107 @@
+{
+    "mockDirectory": "../node/mock",
+    "quiet": false,
+    "port": "9000",
+    "latency": 50,
+    "logRequestHeaders": false,
+    "webServices": {
+        "v1/organizations/:apigeeOrg/developers/:apigeeDeveloper/apps/:apigeeApp": {
+            "latency": 10,
+            "verbs": [
+                "get"
+            ],
+            "switch": [
+                "apigeeOrg",
+                "apigeeDeveloper",
+                "apigeeApp"
+            ],
+            "responses": {
+                "get": {
+                    "httpStatus": 400,
+                    "mockFile": "credenciales_badRequest.json"
+                }
+            },
+            "switchResponses": {
+                "apigeeOrgorgeTestapigeeDeveloperejemploDeveloperapigeeAppejemploApp": {
+                    "httpStatus": 200,
+                    "mockFile": "credenciales_ok.json"
+                }
+            }
+        },
+        "oauth2/v1/token": {
+            "latency": 10,
+            "contentType": "application/x-www-form-urlencoded",
+            "headers": {
+                "Authorization": "Basic MXJ0N2J0cEJJcG5aVWdzNVlFTWgyN1A5R0wyWTFSdDg6MTVGTDRtenJXVHFHMnlISg=="
+            },
+            "verbs": [
+                "post"
+            ],
+            "switch": [
+                "grant_type"
+            ],
+            "responses": {
+                "get": {
+                    "httpStatus": 400,
+                    "mockFile": "autorizacion_badRequest.json"
+                }
+            },
+            "switchResponses": {
+                "grant_typeclient_credentials": {
+                    "httpStatus": 200,
+                    "mockFile": "autorizacion_ok.json"
+                }
+            }
+        },
+        "superapp/enrolamiento/autenticacion-usuarios/v1/credenciales": {
+            "latency": 10,
+            "verbs": [
+                "put"
+            ],
+            "headers": {
+                "x-id-interaccion": "3bad1290ac4600a569162efaa09117ea"
+            },
+            "switch": [
+                "x-sicu",
+                "x-id-interaccion",
+                "x-nombre-dispositivo",
+                "x-id-dispositivo",
+                "x-sistema-dispositivo",
+                "x-version-dispositivo",
+                "x-version-aplicacion",
+                "x-modelo-dispositivo",
+                "x-fabricante-dispositivo",
+                "x-serie-procesador",
+                "x-operador-telefonia",
+                "x-latitud",
+                "x-longitud",
+                "x-token-usuario",
+                "$.nuevaContrasenia"
+            ],
+            "responses": {
+                "put": {
+                    "httpStatus": 400,
+                    "mockFile": "credenciales/credenciales_400.json"
+                }
+            },
+            "switchResponses": {
+                "x-sicu3bad1290ac4600a569162efaa09117eax-id-interaccion3bad1290ac4600a569162efaa09117eax-nombre-dispositivoSuper%20movilx-id-dispositivo3bad1290ac4600a569162efaa09117eax-sistema-dispositivoAndroidx-version-dispositivo6.0x-version-aplicacion2.1.1x-modelo-dispositivoP40x-fabricante-dispositivoHuaweix-serie-procesadormt6735x-operador-telefoniaTelcelx-latitud19.49781290x-longitud-99.12698712x-token-usuarioSRfVZrTYvdm7mzzZmcuiDViACkAx$.nuevaContraseniabP7d3n0HO%2BHA8DGhXZcQWGROJQVjAPOau7qzckF%2FUBvlBw8qUNidID7TlyZsYuG0CK4t7hsLbVHpTmJRFMvpZs7PdqPvHA1fz5b5N5sINxafyykKTuaqEB0R6fnmnzHHimR5WCljpEmVumoo3qGh5e%2FNM1QV%2BGBoloIAq9pNvm0%3D": {
+                    "httpStatus": 200,
+                    "mockFile": "credenciales/credenciales_200.json"
+                },                
+                "x-sicu3bad1290ac4600a569162efaa09117eax-id-interaccion3bad1290ac4600a569162efaa09117eax-nombre-dispositivoSuper%20movilx-id-dispositivo3bad1290ac4600a569162efaa09117eax-sistema-dispositivoAndroidx-version-dispositivo6.0x-version-aplicacion2.1.1x-modelo-dispositivoP40x-fabricante-dispositivoHuaweix-serie-procesadormt6735x-operador-telefoniaTelcelx-latitud19.49781290x-longitud-99.12698712x-token-usuarioSRfVZrTYvdm7mzzZmcuiDViACkAx$.nuevaContrasenia400": {
+                    "httpStatus": 400,
+                    "mockFile": "credenciales/credenciales_400.json"
+                },
+                "x-sicu3bad1290ac4600a569162efaa09117eax-id-interaccion3bad1290ac4600a569162efaa09117eax-nombre-dispositivoSuper%20movilx-id-dispositivo3bad1290ac4600a569162efaa09117eax-sistema-dispositivoAndroidx-version-dispositivo6.0x-version-aplicacion2.1.1x-modelo-dispositivoP40x-fabricante-dispositivoHuaweix-serie-procesadormt6735x-operador-telefoniaTelcelx-latitud19.49781290x-longitud-99.12698712x-token-usuarioSRfVZrTYvdm7mzzZmcuiDViACkAx$.nuevaContrasenia404": {
+                    "httpStatus": 404,
+                    "mockFile": "not_found.json"
+                },
+                "x-sicu3bad1290ac4600a569162efaa09117eax-id-interaccion3bad1290ac4600a569162efaa09117eax-nombre-dispositivoSuper%20movilx-id-dispositivo3bad1290ac4600a569162efaa09117eax-sistema-dispositivoAndroidx-version-dispositivo6.0x-version-aplicacion2.1.1x-modelo-dispositivoP40x-fabricante-dispositivoHuaweix-serie-procesadormt6735x-operador-telefoniaTelcelx-latitud19.49781290x-longitud-99.12698712x-token-usuarioSRfVZrTYvdm7mzzZmcuiDViACkAx$.nuevaContrasenia500": {
+                    "httpStatus": 500,
+                    "mockFile": "internal_server_error.json"
+                }
+            }
+        }
+    }    
+}
