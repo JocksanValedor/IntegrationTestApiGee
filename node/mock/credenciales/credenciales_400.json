@@ -1,0 +1,9 @@
+{
+  "codigo": "400.superapp-enrolamiento-autenticacion-usuarios-v1.1001",
+  "mensaje": "Parámetros de entrada incorrectos, favor de validar",
+  "folio": "ENRO202101041231560182cddca485",
+  "info": "https://baz-developer.bancoazteca.com.mx/info#400.superapp-enrolamiento-autenticacion-usuarios-v1.1001",
+  "detalles": [
+    "El parámetro {nombre} es requerido."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mensaje": "Operacion exitosa",
+  "folio": "SAPP20201124050617040419287517",
+  "resultado": {
+    "estatus": 0,
+    "respuesta": {
+      "valorActualizado": true
+    }
+  }
+}
